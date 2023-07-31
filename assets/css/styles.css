@@ -59,14 +59,42 @@ h1 {
   height: 950px;
   background-size: cover;
   background-position: center;
-  animation: slideBackground 16s infinite;
 }
 
 @keyframes slideBackground {
-  0%, 100% { background-image: url('../img/home_page.jpg'); }
-  25% { background-image: url('../img/about_page.jpg'); }
-  50% { background-image: url('../img/gallery_page.jpg'); }
-  75% { background-image: url('../img/contact_page.jpg'); }
+  0%, 100% { background-image: url('../img/home_page.jpg'); opacity: 1; }
+  16.66% { background-image: url('../img/about_page.jpg'); }
+  33.33% { background-image: url('../img/gallery_page.jpg'); }
+  50% { background-image: url('../img/contact_page.jpg'); }
+  66.66% { background-image: url('../img/home_page.jpg'); }
+  83.33% { opacity: 1; }
+}
+
+@keyframes slideAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  33.33% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  66.66% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+.home {
+  animation: slideBackground 16s infinite;
+}
+
+.content-index {
+  animation: slideAnimation 16s infinite;
 }
 
 .dots-container {
@@ -347,4 +375,9 @@ nav ul li a {
   display: block;
   content: "";
   margin: 20px 0;
+}
+
+.copyright{
+  padding-top: 200px;
+  padding-left: 10px;
 }
