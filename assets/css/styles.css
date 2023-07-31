@@ -1,0 +1,350 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 900px;
+  /* width: 1480px; */
+  scroll-behavior: smooth;
+}
+
+h1 {
+  text-align: center;
+}
+
+@font-face {
+  font-family: "Font Title";
+  src: url("../fonts/font_title.ttf");
+}
+@font-face {
+  font-family: "Font O";
+  src: url("../fonts/font_o.ttf");
+}
+
+.font-title {
+  font-family: "Font Title", sans-serif;
+  font-size: 64px;
+  color: #f64a08;
+  font-weight: 400px;
+  text-shadow: 0px 4px 8px rgb(0, 0, 0);
+}
+
+.font-o {
+  font-family: "Font O", sans-serif;
+  font-size: 45px;
+  color: #ffffff;
+  font-weight: 400px;
+  text-shadow: 0px 4px 8px rgb(0, 0, 0);
+}
+
+.font-header {
+  font-family: "Inter", sans-serif;
+}
+
+.home,
+.about,
+.menu,
+.gallery,
+.contact {
+  background-size: cover;
+  /* not responsive */
+  background-position: center;
+  height: 950px;
+  padding-top: 37px;
+  /* not responsive */
+}
+
+.home {
+  /* Add these styles to make it a slideshow container */
+  position: relative;
+  height: 950px;
+  background-size: cover;
+  background-position: center;
+  animation: slideBackground 16s infinite;
+}
+
+@keyframes slideBackground {
+  0%, 100% { background-image: url('../img/home_page.jpg'); }
+  25% { background-image: url('../img/about_page.jpg'); }
+  50% { background-image: url('../img/gallery_page.jpg'); }
+  75% { background-image: url('../img/contact_page.jpg'); }
+}
+
+.dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+.container-gallery-item img {
+  /* Apply grayscale effect when the mouse is not on the image */
+  filter: grayscale(100%);
+}
+
+.container-gallery-item img:hover {
+  /* Remove the grayscale effect on hover */
+  filter: grayscale(0%);
+}
+
+.about {
+  background-image: url("../img/about_page.jpg");
+}
+.menu,
+.gallery {
+  background-image: url("../img/gallery_page.jpg");
+  height: 50%;
+}
+
+.contact {
+  background-image: url("../img/contact_page.jpg");
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-selected {
+  color: white;
+  background-color: #ffffff80;
+  border-radius: 17px;
+  border: 1px solid white;
+}
+
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: top 0.3s;
+  padding-top: 10px;
+}
+
+.spanner {
+  padding-bottom: 750px;
+}
+
+.container-main-home,
+.container-main-about,
+.container-main-gallery,
+.container-main-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-main-home {
+  margin-top: 10px;
+  /* not responsive */
+}
+
+.container-main-about {
+  margin-top: 10px;
+  /* not responsive */
+}
+
+.container-main-gallery {
+  margin-top: 10px;
+  /* not responsive */
+}
+.container-main-contact {
+  margin-top: 10px;
+  /* not responsive */
+}
+
+.container-main-menu {
+  background-color: #f1efdc;
+  padding: 25px;
+}
+
+.text-container-main-home {
+  padding-top: 100px;
+  width: 47%;
+}
+
+.text-container-main-about {
+  padding-top: 100px;
+  width: 57%;
+}
+
+.text-container-main-gallery {
+  /* padding-top: 100px; */
+  width: 81%;
+}
+
+.text-container-main-contact {
+  padding-top: 100px;
+  width: 82%;
+}
+
+.description-one,
+.description-two,
+.history,
+.history-description {
+  font-family: "Inter", sans-serif;
+  color: white;
+  text-align: center;
+  /* not responsive */
+}
+
+.description-one {
+  font-size: 12px;
+  margin-top: -20px;
+  /* not responsive */
+}
+
+.history {
+  font-size: 20px;
+  margin-top: 50px;
+  /* not responsive */
+}
+
+.history-description {
+  font-size: 16px;
+  margin-bottom: 40px;
+  /* not responsive */
+}
+
+.description-two {
+  margin-top: 170px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #f64a08;
+}
+
+.font-menu {
+  font-family: "Font Title", sans-serif;
+  font-size: 48px;
+  color: #f64a08;
+  font-weight: 400px;
+  margin: 0px;
+}
+
+.container-menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.font-menu-list {
+  font-family: "Inter", sans-serif;
+  color: #000000;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.container-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.container-gallery-item {
+  margin-bottom: 20px;
+}
+
+.container-contact {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.font-opening-hours {
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  width: 30%;
+}
+.font-opening-hours-title {
+  font-size: 20px;
+  text-align: right;
+}
+
+.font-opening-hours-desc {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.font-thanks {
+  font-family: "Font Title", sans-serif;
+  font-size: 40px;
+  color: #f64a08;
+  font-weight: 400px;
+  margin: 0px;
+}
+
+.font-contact {
+  font-family: "Font Title", sans-serif;
+  font-size: 36px;
+  color: #f64a08;
+  font-weight: 400px;
+  margin: 0px;
+}
+
+.logo {
+  position: absolute;
+  top: 0px;
+  left: 5%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 70px;
+  height: 70px;
+}
+
+.icon {
+  text-align: center;
+}
+
+.white-line {
+  border: 1px solid white;
+  display: block;
+  content: "";
+  margin: 20px 0;
+}
