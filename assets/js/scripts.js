@@ -23,40 +23,11 @@ function initMap() {
 
 
 let slideIndex = 1;
-showSlides(slideIndex);
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let slides = document.getElementsByClassName("slide");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) { slideIndex = 1; }
-  if (n < 1) { slideIndex = slides.length; }
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].classList.remove("active");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].classList.add("active");
-}
 
 // Ganti slide setiap 5 detik
 setInterval(function() {
   slideIndex++;
-  showSlides(slideIndex);
 }, 5000);
-
-// Tambahkan event listener untuk setiap dot agar dapat diklik
-let dots = document.getElementsByClassName("dot");
-for (let i = 0; i < dots.length; i++) {
-  dots[i].addEventListener("click", function() {
-    currentSlide(i + 1);
-  });
-}
 
 
 const containerGalleryItems = document.querySelectorAll('.container-gallery-item');
@@ -70,5 +41,22 @@ containerGalleryItems.forEach(item => {
   item.addEventListener('mouseout', () => {
     // Remove the class when the mouse leaves the image
     item.parentNode.classList.remove('active');
+  });
+});
+
+const sections = document.querySelectorAll(".section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  const currentPos = window.scrollY;
+  sections.forEach((section, index) => {
+    const top = section.offsetTop - 200; // Adjust this value as needed
+    const bottom = top + section.offsetHeight;
+    if (currentPos >= top && currentPos <= bottom) {
+      navLinks.forEach((link) => link.classList.remove("active"));
+      navLinks[index].classList.add("active");
+    } else {
+      navLinks[index].classList.remove("active");
+    }
   });
 });
