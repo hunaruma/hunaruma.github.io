@@ -62,11 +62,11 @@ h1 {
 }
 
 @keyframes slideBackground {
-  0%, 100% { background-image: url('../img/home_page.jpg'); opacity: 1; }
-  16.66% { background-image: url('../img/about_page.jpg'); }
-  33.33% { background-image: url('../img/gallery_page.jpg'); }
-  50% { background-image: url('../img/contact_page.jpg'); }
-  66.66% { background-image: url('../img/home_page.jpg'); }
+  0%, 100% { background-image: url('../img/HAL\ 1\ kecil.jpg'); opacity: 1; }
+  16.66% { background-image: url('../img/HAL\ 2\ kecil.jpg'); }
+  33.33% { background-image: url('../img/HAL\ 3\ kecil.jpg'); }
+  50% { background-image: url('../img/HAL\ 4\ kecil.jpg'); }
+  66.66% { background-image: url('../img/HAL\ 5\ kecil.jpg'); }
   83.33% { opacity: 1; }
 }
 
@@ -106,16 +106,20 @@ h1 {
 } */
 
 .about {
-  background-image: url("../img/about_page.jpg");
+  background-image: url("../img/HAL\ 2\ kecil.jpg");
 }
-.menu,
+.menu{
+  background-image: url("../img/HAL\ 3\ kecil.jpg");
+  height: 50%;
+}
+
 .gallery {
-  background-image: url("../img/gallery_page.jpg");
+  background-image: url("../img/HAL\ 4\ kecil.jpg");
   height: 50%;
 }
 
 .contact {
-  background-image: url("../img/contact_page.jpg");
+  background-image: url("../img/HAL\ 5\ kecil.jpg");
 }
 
 .content {
@@ -226,6 +230,7 @@ nav ul li a {
   color: #f64a08;
   font-weight: 400px;
   margin: 0px;
+  padding-bottom: 25px;
 }
 
 .container-menu-list {
@@ -245,17 +250,19 @@ nav ul li a {
 }
 
 .container-gallery {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px; /* Adjust the gap between images as needed */
 }
 
 .container-gallery-item {
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container-gallery-item img {
+  max-width: 100%;
+  height: auto;
 }
 
 .container-contact {
